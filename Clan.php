@@ -20,6 +20,27 @@ class Clan
         $this->tip_id = $tip_id;
     }
 
+
+    public function vratiSveClanove()
+    {
+        $hostName = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "forum";
+        $connection = new mysqli($hostName, $username, $password, $dbname);
+
+        $sqlQuery = "SELECT c.id as clanId, c.ime, c.prezime, c.username, c.email, t.naziv, t.naknada, t.trajanje
+         FROM clan c JOIN tip t ON c.tip_id=t.id";
+        $result = $connection->query($sqlQuery);
+        $clanovi = [];
+        while ($i = $result->fetch_object()) {
+            $clanovi[] = $i;
+        }
+
+        return $clanovi;
+    }
+
+
     public function sacuvajNovogClana($clan)
     {
         $hostName = "localhost";

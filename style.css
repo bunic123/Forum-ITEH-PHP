@@ -1,5 +1,5 @@
 #pocetna-nav{
-    margin-left:50%;
+    margin-left: 520%;
 }
 
 #dodajClanaForma{
@@ -17,4 +17,14 @@
 #forma-naslov{
     margin-top: 2%;
     margin-left: 5%;
+}
+
+.nav-elementi{
+    display: flex;
+}
+
+#korisnici-tabela{
+    width: 50%;
+    margin-left: 28%;
+    margin-top: 3%;
 }
