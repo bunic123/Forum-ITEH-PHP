@@ -10,5 +10,5 @@ $sqlQuery = "DELETE from clan where id=" . $_GET['clanId'];
 $connection->query($sqlQuery);
 
 echo "<script type='text/javascript'>
-    alert('Korisnik je obrisan!');
-    location='prikazKorisnika.php';</script>";
+    alert('Član je obrisan!');
+    location='prikazClanova.php';</script>";

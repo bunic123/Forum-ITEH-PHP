@@ -49,7 +49,7 @@
                     <td><?php echo $sviClanovi[$i]->naziv  ?></td>
                     <td><?php echo $sviClanovi[$i]->trajanje ?></td>
                     <td><?php echo $sviClanovi[$i]->naknada . " RSD" ?></td>
-                    <td><a href="brisanjeKorisnika.php?clanId=<?php echo $sviClanovi[$i]->clanId ?>"><button class="btn btn-primary" id="obrisi-button" value="<?php echo $sviClanovi[$i]->clanId; ?>">Obriši</button></td>
+                    <td><a href="brisanjeClana.php?clanId=<?php echo $sviClanovi[$i]->clanId ?>"><button class="btn btn-primary" id="obrisi-button" value="<?php echo $sviClanovi[$i]->clanId; ?>">Obriši</button></td>
                 <tr>
 
                 <?php

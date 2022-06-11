@@ -56,6 +56,6 @@ class Clan
 
         echo "<script type='text/javascript'>
         alert('Novi korisnik je uspešno registrovan!');
-        location='prikazKorisnika.php';</script>";
+        location='prikazClanova.php';</script>";
     }
 }
