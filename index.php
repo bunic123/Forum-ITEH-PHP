@@ -14,6 +14,8 @@
 
     <?php
     include 'navbar.php';
+    include 'Tip.php';
+    include 'Clan.php';
     ?>
 
     <h2 class="text-center" id="forma-naslov">Forma za registraciju</h2>
@@ -37,24 +39,40 @@
 
         <div class="form-group mt-3">
             <label class="form-label">Password </label>
-            <input type="text" class="form-control" name="password">
+            <input type="password" class="form-control" name="password">
         </div>
 
         <div class="form-group mt-3">
             <label class="form-label">Email </label>
-            <input type="text" class="form-control" name="email">
+            <input type="email" class="form-control" name="email">
         </div>
 
         <div class="form-group mt-3 mb-3">
             <label class="form-label">Tip </label>
-            <select class="form-select" name="tip">
+            <select class="form-select text-center" name="tip">
+                <?php
+                $tip = new Tip();
+                $sviTipovi = $tip->vratiSveTipove();
 
+                for ($i = 0; $i < count($sviTipovi); $i++) :
+                ?>
+                    <option value="<?php echo $sviTipovi[$i]->id ?>"><?php echo $sviTipovi[$i]->naziv ?></option>
+                <?php
+                endfor;
+                ?>
             </select>
         </div>
 
         <button type="submit" id="dodajClanaBtn" name="dodajClanaBtn" class="btn btn-primary">Sačuvaj</button>
     </form>
 
+    <?php
+
+    if (isset($_POST['dodajClanaBtn'])) {
+        $clan = new Clan($_POST['ime'], $_POST['prezime'], $_POST['username'], $_POST['password'], $_POST['email'], $_POST['tip']);
+        $clan->sacuvajNovogClana($clan);
+    }
+    ?>
 
 
 </body>
