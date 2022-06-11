@@ -41,6 +41,22 @@ class Clan
     }
 
 
+    public function vratiClana($id)
+    {
+        $hostName = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "forum";
+        $connection = new mysqli($hostName, $username, $password, $dbname);
+
+        $sqlQuery = "SELECT * FROM clan WHERE id=" . $id;
+        $result = $connection->query($sqlQuery);
+
+        return $result->fetch_object();
+    }
+
+
+
     public function sacuvajNovogClana($clan)
     {
         $hostName = "localhost";
@@ -55,7 +71,7 @@ class Clan
         $connection->query($sqlQuery);
 
         echo "<script type='text/javascript'>
-        alert('Novi korisnik je uspešno registrovan!');
+        alert('Novi član je uspešno registrovan!');
         location='prikazClanova.php';</script>";
     }
 }

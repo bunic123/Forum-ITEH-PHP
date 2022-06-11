@@ -18,7 +18,7 @@
     include 'Clan.php';
     ?>
 
-    <h2 class="text-center" id="forma-naslov">Registrovani korisnici</h2>
+    <h2 class="text-center" id="forma-naslov">Registrovani članovi</h2>
 
     <table id="korisnici-tabela" class="table table-bordered table-striped text-center">
         <thead>
@@ -29,7 +29,7 @@
                 <th>Tip</th>
                 <th>Trajanje</th>
                 <th>Naknada</th>
-                <th>Brisanje</th>
+                <th>Brisanje/Izmena</th>
             </tr>
         </thead>
         <tbody>
@@ -49,7 +49,9 @@
                     <td><?php echo $sviClanovi[$i]->naziv  ?></td>
                     <td><?php echo $sviClanovi[$i]->trajanje ?></td>
                     <td><?php echo $sviClanovi[$i]->naknada . " RSD" ?></td>
-                    <td><a href="brisanjeClana.php?clanId=<?php echo $sviClanovi[$i]->clanId ?>"><button class="btn btn-primary" id="obrisi-button" value="<?php echo $sviClanovi[$i]->clanId; ?>">Obriši</button></td>
+                    <td><a href="brisanjeClana.php?clanId=<?php echo $sviClanovi[$i]->clanId ?>"><button class="btn btn-primary" id="obrisi-button" value="<?php echo $sviClanovi[$i]->clanId; ?>">Obriši</button></a>
+                        <a href="editPrikazClana.php?clanId=<?php echo $sviClanovi[$i]->clanId ?>"><button class="btn btn-dark" id="izmeni-button" value="<?php echo $sviClanovi[$i]->clanId; ?>">Izmeni</button></a>
+                    </td>
                 <tr>
 
                 <?php
