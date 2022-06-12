@@ -26,14 +26,22 @@
 #korisnici-tabela{
     width: 50%;
     margin-left: 28%;
-    margin-top: 3%;
-}
-
-#txtPretraga{
-    width: 18%;
+    margin-top: 1%;
 }
 
 #div-pretrazi{
     margin-left: 28%;
-    margin-bottom: -2%;
+    margin-top: 2%;
+}
+
+.pre-sor-div{
+    display: flex;
+}
+
+#div-sortiraj{
+    margin-left: 28%;
+}
+
+#selKolona, #selSort{
+    width: 200%;
 }

@@ -20,11 +20,34 @@
 
     <h2 class="text-center" id="forma-naslov">Registrovani članovi</h2>
 
-    <div id="div-pretrazi">
-        <label>Pretraži:</label>
-        <input type="text" class="form-control" id="txtPretraga">
-        <button class="btn btn-primary mt-2" id="pretraziBtn">Pretraži</button>
+    <div class="pre-sor-div">
+        <div id="div-pretrazi">
+            <label>Pretraži:</label>
+            <input type="text" class="form-control" id="txtPretraga">
+            <button class="btn btn-primary mt-2" id="pretraziBtn">Pretraži</button>
+        </div>
+
+        <div id="div-sortiraj">
+            <label>Sortiraj:</label>
+            <select class="form-select" id="selKolona">
+                <option>Izaberi</option>
+                <option value="ime">Ime</option>
+                <option value="prezime">Prezime</option>
+                <option value="username">Username</option>
+                <option value="naziv">Tip</option>
+
+            </select>
+            <select class="form-select mt-2" id="selSort">
+                <option>Izaberi</option>
+                <option value="asc">Rastuće</option>
+                <option value="desc">Opadajuće</option>
+            </select>
+            <button class="btn btn-primary mt-2" id="sortBtn">Sortiraj</button>
+
+        </div>
+
     </div>
+
 
     <table id="korisnici-tabela" class="table table-bordered table-striped text-center">
         <thead>
