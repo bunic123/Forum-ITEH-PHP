@@ -20,6 +20,12 @@
 
     <h2 class="text-center" id="forma-naslov">Registrovani članovi</h2>
 
+    <div id="div-pretrazi">
+        <label>Pretraži:</label>
+        <input type="text" class="form-control" id="txtPretraga">
+        <button class="btn btn-primary mt-2" id="pretraziBtn">Pretraži</button>
+    </div>
+
     <table id="korisnici-tabela" class="table table-bordered table-striped text-center">
         <thead>
             <tr>
@@ -32,7 +38,7 @@
                 <th>Brisanje/Izmena</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="prikazBody">
 
             <?php
 
@@ -60,6 +66,9 @@
         </tbody>
     </table>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="javascript.js"></script>
 </body>
 
 </html>
