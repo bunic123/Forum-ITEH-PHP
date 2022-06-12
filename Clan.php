@@ -74,4 +74,23 @@ class Clan
         alert('Novi član je uspešno registrovan!');
         location='prikazClanova.php';</script>";
     }
+
+
+
+    public function sacuvajIzmene($clan)
+    {
+        $hostName = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "forum";
+        $connection = new mysqli($hostName, $username, $password, $dbname);
+
+        $sqlQuery = "update clan set ime='$clan->ime', prezime='$clan->prezime', username='$clan->username', password='$clan->password', email='$clan->email', tip_id='$clan->tip_id' where id=$clan->id";
+
+        $connection->query($sqlQuery);
+
+        echo "<script type='text/javascript'>
+        alert('Član je uspešno izmenjen!');
+        location='prikazClanova.php';</script>";
+    }
 }

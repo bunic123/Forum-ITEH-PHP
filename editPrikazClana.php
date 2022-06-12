@@ -69,6 +69,14 @@
         <button type="submit" id="izmeniClanaBtn" name="izmeniClanaBtn" class="btn btn-primary">Sačuvaj izmene</button>
     </form>
 
+    <?php
+    if (isset($_POST['izmeniClanaBtn'])) {
+        $clan = new Clan($_POST['ime'], $_POST['prezime'], $_POST['username'], $_POST['password'], $_POST['email'], $_POST['tip']);
+        $clan->id = $_GET['clanId'];
+        $clan->sacuvajIzmene($clan);
+    }
+    ?>
+
 </body>
 
 </html>
